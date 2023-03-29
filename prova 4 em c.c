@@ -13,7 +13,7 @@ typedef struct conta{
 float saca(int , float , float );
 
 
-// nao sei porque nao funciona mas nao funciona
+
 float investe(int , float , int );
 
 
@@ -47,14 +47,10 @@ scanf("");
 
 printf("digite a quantidade de meses que deseja investir na conta corrente \n");
 scanf("%i", &meses);
-//cc.saldo=investe(cc.tipo, cc.saldo, meses);
-printf("%.2f\n", cc.saldo);
 scanf("");
 
 printf("digite a qunatidade de meses que deseja investir na conta poupanca \n");
 scanf("%i",&meses);
-//cp.saldo=investe(cp.tipo, cp.saldo, meses);
-printf("%.2f\n",cp.saldo);
 scanf("");
 
 printf("quanto deseja sacar na conta corrente? ");
@@ -78,20 +74,12 @@ printf("saldo final da conta poupanca: R$%.2f\n",cp.saldo-sub1);
 investimento = investe(cc.tipo, cc.saldo, meses );
 printf("saldo final da conta corrente depois do investimento: R$%.2f\n",cc.saldo+investimento);
 
-investimento1= saca(cp.tipo,cp.tipo, meses);
+investimento1= investe(cp.tipo,cp.saldo, meses);
 printf("saldo final da conta poupanca depois do investimento: R$%.2f\n",cp.saldo+investimento1);
-
-
-
 
 
 return 0;
 }
-
-
-
-
-
 float saca(int type, float valorsacado, float a){
 	Conta cc;
 	cc.limite = 200;
