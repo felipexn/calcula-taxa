@@ -7,23 +7,15 @@ typedef struct conta{
 	int tipo;
 	float limite;
 	float saldo;
-	
 }Conta;
 
 float saca(int , float , float );
-
-
-
 float investe(int , float , int );
-
-
-
 
 int main(){
 Conta cc;
 cc.saldo = 50;
 cc.tipo = 0;
-
 
 Conta cp;
 cp.saldo = 50;
@@ -32,10 +24,7 @@ cp.tipo = 1;
 float sub;
 float sub1;
 int meses;
-float valorsacado;
-float valorsacadop;
-float investimento;
-float investimento1;
+float investimento,investimento1, valorsacadop, valorsacado;
 
 printf("deposite um valor na conta corrente: ");
 scanf("%f", &cc.saldo);
@@ -57,19 +46,15 @@ printf("quanto deseja sacar na conta corrente? ");
 scanf("%f",&valorsacado);
 //printf("R$%.2f SACADO\n",saca(cc.tipo,valorsacado,cc.saldo));
 
-
 printf("quanto deseja sacar na conta poupanca? ");
 scanf("%f",&valorsacadop);
 //printf("R$%.2f SACADO\n",saca(cp.tipo,valorsacadop,cp.saldo));
-
-
 
 sub = saca(cc.tipo,valorsacado,cc.saldo);
 printf("saldo final da conta corrente: R$%.2f\n",cc.saldo-sub);
 
 sub1 = saca(cp.tipo,valorsacado,cp.saldo);
 printf("saldo final da conta poupanca: R$%.2f\n",cp.saldo-sub1);
-
 
 investimento = investe(cc.tipo, cc.saldo, meses );
 printf("saldo final da conta corrente depois do investimento: R$%.2f\n",cc.saldo+investimento);
@@ -86,8 +71,7 @@ float saca(int type, float valorsacado, float a){
 	
 	Conta cp;
 	cp.limite = 100;
-	
-	
+		
 	if (type == 0 && valorsacado <= a && valorsacado <= cc.limite){
 			valorsacado += valorsacado*0.02;
 	return valorsacado;
@@ -105,6 +89,7 @@ scanf("");
 	return inve;
 	}else if(tipo == 1){
 	inve = saldo*pow((1+0.03),meses);
+		
 	return inve;
 	}
 }
